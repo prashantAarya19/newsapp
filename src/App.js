@@ -1,16 +1,115 @@
-import React, { Component } from 'react'
-import NavBar from './components/NavBar';
-import News from './components/News';
+import React, { Component } from "react";
+import NavBar from "./components/NavBar";
+import News from "./components/News";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 export default class App extends Component {
-  name = 'Prashant';
+  pageSize = 8;
   render() {
     return (
       <div>
-        <NavBar />
-        <News />
+        <Router>
+          <NavBar />
+          <Routes>
+            <Route
+              exact
+              path="/"
+              element={
+                <News
+                  pageSize={this.pageSize}
+                  country="in"
+                  category="general"
+                  key="general"
+                />
+              }
+            />
+            <Route
+              exact
+              path="/business"
+              element={
+                <News
+                  pageSize={this.pageSize}
+                  country="in"
+                  category="business"
+                  key="business"
+                />
+              }
+            />
+            <Route
+              exact
+              path="/entertainment"
+              element={
+                <News
+                  pageSize={this.pageSize}
+                  country="in"
+                  category="entertainment"
+                  key="entertainment"
+                />
+              }
+            />
+            <Route
+              exact
+              path="/general"
+              element={
+                <News
+                  pageSize={this.pageSize}
+                  country="in"
+                  category="general"
+                  key="general"
+                />
+              }
+            />
+            <Route
+              exact
+              path="/health"
+              element={
+                <News
+                  pageSize={this.pageSize}
+                  country="in"
+                  category="health"
+                  key="health"
+                />
+              }
+            />
+            <Route
+              exact
+              path="/science"
+              element={
+                <News
+                  pageSize={this.pageSize}
+                  country="in"
+                  category="science"
+                  key="science"
+                />
+              }
+            />
+            <Route
+              exact
+              path="/sports"
+              element={
+                <News
+                  pageSize={this.pageSize}
+                  country="in"
+                  category="sports"
+                  key="sports"
+                />
+              }
+            />
+            <Route
+              exact
+              path="/technology"
+              element={
+                <News
+                  pageSize={this.pageSize}
+                  country="in"
+                  category="technology"
+                  key="technology"
+                />
+              }
+            />
+          </Routes>
+        </Router>
       </div>
-    )
+    );
   }
 }
-
